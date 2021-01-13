@@ -1,0 +1,90 @@
+import java.util.Scanner;
+public class Queue 
+{
+	static Scanner sc=new Scanner(System.in);
+	static int n,front=-1, rear=-1,item;
+	static int[] Ar=new int[10];
+	
+	Queue()
+	{
+		
+	}
+	Queue(int n)
+	{
+		int ch;
+		do
+		{
+			System.out.println("1. Enqueue\n 2. Dequeue\n 3.Display\n");
+			System.out.println("enter your choice\n");
+			ch=sc.nextInt();
+			switch(ch)
+			{
+			case 1:
+				enqueue(n);
+				break;
+			case 2:
+				dequeue(n);
+				break;
+			case 3:
+				display(n);
+				break;
+			default:
+				break;
+			}
+		}
+		while(ch<3);
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc1=new Scanner(System.in);
+		int n;
+		System.out.println("Enter the size of queue");
+		n=sc1.nextInt();
+		new Queue(n);
+	}
+	public static void enqueue(int n)
+	{
+		if(rear>= n-1)
+			System.out.println("overflow");
+		else
+			if(front==-1 && rear==-1)
+			{
+				front++;
+			}
+			System.out.println("enter the element to be inserted\n");
+			item=sc.nextInt();
+			rear++;
+			Ar[rear]=item;
+			display(rear);
+ }
+	public static void dequeue(int n)
+	{
+		if(front==-1)
+			System.out.println("underflow\n");
+		else
+		{
+			item=Ar[front];
+			System.out.printf("the element deleted is %d \n",item);
+			if(front==rear)
+			{
+				front=-1;
+				rear=-1;
+				System.out.println("the queue is empty");
+			}
+			else
+				front++;
+			    display(rear);
+			}
+		}
+	public static void display(int rear)
+	{
+		int i;
+		System.out.println("the current queue is\n");
+		for(i=front;i<=rear;i++)
+		{
+			System.out.printf("%d",Ar[i]);
+		}
+		System.out.println("\n");
+	}
+
+}
