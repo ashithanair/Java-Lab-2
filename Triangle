@@ -1,1 +1,25 @@
 import java.util.Scanner;
+public class Triangle1
+{
+	
+	public static void main(String[] args)
+	{
+		
+		Triangle obj=new Triangle();
+		
+	}
+}
+
+class Triangle
+{
+		 Triangle()
+		{
+			int a=3,b=4,c=5;
+			double s=(a+b+c)/2;
+			double area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+			System.out.println("Area of triangle is "+area);
+			System.out.println("Perimeter of triangle is "+(s*2));
+		}
+	}
+
+
